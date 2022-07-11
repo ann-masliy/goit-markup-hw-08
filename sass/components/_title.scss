@@ -1,0 +1,13 @@
+.pictures__title,
+.team__title,
+.client__title {
+    margin-bottom: 50px;
+
+    @include font(700, 28px, 1.18, 0.03em);
+           
+    @include desktop {
+        @include font(null, 36px, 1.17, null);
+    }
+    color: var(--second-text-color);
+    text-align: center;
+}

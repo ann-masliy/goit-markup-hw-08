@@ -1,0 +1,236 @@
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.2);
+    opacity: 1;
+
+    transition: opacity var(--transition-animation);
+    &.is-hidden {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    
+        .modal {
+            transform: translate(-50%, -50%) scale(0.4, 0.1);
+            opacity: 0;
+        }
+    }
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 300px;
+    min-height: 609px;
+
+    @media screen and (min-width: 370px) {
+        min-width: 350px;
+    }
+
+    @media screen and (min-width: 420px) {
+        min-width: 400px;
+    }
+
+    @include mobile {
+        min-width: 450px;
+    }
+
+    @include desktop {
+        min-width: 528px;
+        min-height: 581px;
+    }    
+
+    background: var(--header-color);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+
+    transform: translate(-50%, -50%) scale(1, 1);
+    opacity: 1;
+    transition: transform var(--transition-animation),
+        opacity var(--transition-animation),
+        visibility var(--transition-animation);
+}
+
+.btn-closed {
+    position: absolute;
+    display: inline-flex;
+    top: 8px;
+    right: 8px;
+    padding: 6px;
+
+    width: 30px;
+    height: 30px;
+
+    background: var(--header-color);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    &:hover {
+        fill: var(--accent-color);
+    }
+}
+
+.form {
+    padding: 40px;
+    &-title {
+        margin-top: 0;
+        margin-bottom: 12px;
+        text-align: center;
+
+        @include font(700, 20px, 1.5, 0.03em);
+
+        @include desktop {
+            line-height: 1.15;
+        }       
+    
+        color: var(--second-text-color);
+    }
+    &-text {
+        display: block;
+        margin-top: 0;
+        margin-bottom: 4px;
+
+        @include font(400, 12px, 1.17, 0.01em);
+            
+        color: var(--text-color);
+    }
+    
+    &-icon {
+        position: absolute;
+        left: 12px;
+        bottom: 11px;
+    
+        transition: fill var(--transition-animation);
+        .form-label:focus-within>&,
+            .form-label:hover>& {
+            fill: var(--accent-color);
+        }
+    }
+    &-label {
+        position: relative;
+    
+        display: block;
+    
+        &+& {
+            margin-top: 10px;
+        }
+    }
+}
+
+.form-comment {
+    width: 100%;
+    resize: none;
+    padding: 12px 16px;
+    &:focus-visible {
+        outline: 1px solid var(--accent-color);
+    }
+    
+    &::placeholder {
+        @include font(400, 12px, 1.17, 0.01em);
+        
+        color: rgba(117, 117, 117, 0.5);
+    }
+    
+    .form-label:focus-within>&,
+    .form-label:hover>& {
+        border: 1px solid var(--accent-color);
+        cursor: pointer;
+    }
+}
+
+.form-comment,
+.form-input {
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+
+    transition: border var(--transition-animation);
+}
+
+.form-input {
+    display: block;
+    width: 100%;
+    height: 40px;
+    padding-left: 42px;
+    &:focus-visible {
+        outline: 1px solid var(--accent-color);
+    }
+    .form-label:focus-within>&,
+    .form-label:hover>& {
+        border: 1px solid var(--accent-color);
+        cursor: pointer;
+    }
+}
+
+.consent-label {
+    display: block;
+    margin-bottom: 30px;
+    margin-top: 20px;
+    align-items: center;
+
+    @include font(400, 12px, 1.17, 0.03em);
+
+    @include mobile {
+        display: flex; 
+        justify-content: center;
+    }
+
+    @include desktop {
+        @include font(null, 14px, 1.71, null);       
+    }
+
+    color: var(--text-color);
+}
+
+.check-input {
+    position: absolute;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    &:checked+.check-box {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-origin: border-box;
+        border-color: var(--accent-color);
+        background-image: url(../images/check.svg);
+        background-color: var(--accent-color);
+    }
+}
+
+.check-box {
+    display: inline-block;
+    width: 16px;
+    height: 15px;
+    border: 2px solid var(--second-text-color);
+    border-radius: 2px;
+    margin-right: 7px;
+}
+
+.consent-text {
+    font-size: 14px;
+    line-height: 1.71;
+    color: var(--text-color);
+}
+
+.consent-link {
+    color: var(--accent-color);
+
+}
+
+.form-button {
+    display: block;
+    margin: 0 auto;    
+    justify-content: center;
+
+    transition: background-color var(--transition-animation);
+    
+    &:hover,
+    &:focus {
+        background-color: var(--button-hover-color);
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    }
+}
+

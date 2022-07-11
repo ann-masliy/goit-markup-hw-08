@@ -1,0 +1,84 @@
+.hero { 
+	height: 400px;
+	margin-left: auto;
+	margin-right: auto;
+    outline: 1px solid var(--logo-color);    
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 118px 0;
+
+    background-color: var(--second-background-color);
+    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),   url(../images/hero/hero-mobile.jpg);
+
+    @include retina {
+        background-image: linear-gradient(rgba(25, 28, 38, 0.2),
+                rgba(25, 28, 38, 0.2)),
+            url(../images/hero/hero-mobile2x.jpg);
+    }
+
+    @include tablet {
+        background-image: linear-gradient(rgba(47, 48, 58, 0.4),
+                rgba(47, 48, 58, 0.4)),
+            url(../images/hero/hero-tablet.jpg);
+        @include retina {
+                background-image: linear-gradient(rgba(25, 28, 38, 0.2),
+                        rgba(25, 28, 38, 0.2)),
+                    url(../images/hero/hero-tablet2x.jpg);
+        }
+    }
+    
+    @include desktop {
+        padding: 200px 0;
+        height: 600px;
+        background-image: linear-gradient(rgba(47, 48, 58, 0.4),
+                rgba(47, 48, 58, 0.4)),
+            url(../images/hero/hero.jpg);
+        @include retina {
+                background-image: linear-gradient(rgba(25, 28, 38, 0.2),
+                        rgba(25, 28, 38, 0.2)),
+                    url(../images/hero/hero2x.jpg);
+        }
+
+    }  
+        
+    &__title {
+        margin: 0 auto 30px auto;
+        max-width: 320px;
+        align-items: center;
+
+        @include font(900, 20px, 1.62, 0.06em);
+
+        @include mobile {
+            @include font(null, 26px, null, null);
+            max-width: 360px;
+        }
+
+        @include desktop {
+            @include font(null, 44px, 1.36, null);
+            max-width: 696px;
+        }
+            
+        color: var(--header-color);
+        text-transform: uppercase;
+        text-align: center;
+        
+    }
+    &__btn {
+        margin: 0 auto;
+        display: block;
+        border-radius: 4px;
+        border: 1px solid transparent;
+          
+        transition: background-color var(--transition-animation);
+    
+        &:hover,
+        &:focus {
+            background-color: var(--button-hover-color);
+        }
+    }
+}
+
+
+
+

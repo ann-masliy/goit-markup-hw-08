@@ -1,0 +1,51 @@
+.about {
+    padding-top: 60px;
+            
+    @include desktop {
+        padding-top: 94px;
+    }
+}
+
+.peculiarities {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    &__item {        
+        width: 100%;
+        
+        @include tablet {
+            width: calc((100% - 30px) / 2);
+        }
+        
+        @include desktop {
+            width: calc((100% - 90px) / 4);
+        }
+            
+    }
+    
+    &__title {
+        margin-bottom: 10px;
+
+        @include font(700, 14px, 1.14, 0.03em);
+            
+        color: var(--second-text-color);
+        text-transform: uppercase;
+    }
+    
+    &__text {
+        @include font(400, 14px, 1.71, 0.03em);
+        
+        color: var(--text-color);
+    }
+    
+    &__icon {
+        display: flex;
+        height: 120px;
+        margin-bottom: 30px;
+        justify-content: center;
+        align-items: center;
+    
+        background-color: var(--thirt-background-color);
+        border-radius: 4px;
+    }
+}

@@ -1,0 +1,55 @@
+.portfolio {
+    padding: 60px 0;
+
+    @include desktop {
+        padding: 94 px 0;
+    }
+}
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    margin-bottom: 40px;
+    margin-top: -15px;
+            
+    @include tablet {
+		justify-content: center;
+		margin-bottom: 30px;
+	}
+	@include desktop {
+		margin-bottom: 50px;
+	}
+
+}
+
+.filters-item {
+    margin-top: 15px;
+    margin-right: 8px;
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.filters-btn {
+    margin: 0 auto;
+    display: block;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    padding: 6px 22px;
+
+    @include font(500, 16px, 1.63, 0.03em);
+    
+    background-color: var(--thirt-background-color);
+    color: var(--second-text-color);
+
+    transition: background-color var(--transition-animation),
+        color var(--transition-animation), box-shadow var(--transition-animation);
+    &:hover,
+    &:focus {
+        background-color: var(--accent-color);
+        color: var(--header-color);
+        box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+        }
+}
+

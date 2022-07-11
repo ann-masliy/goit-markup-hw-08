@@ -1,0 +1,104 @@
+.menu {
+    position: fixed;
+    background-color: var(--header-color);
+    top: 0;
+    left: 0;
+    z-index: 2;
+    
+    width: 100vw;
+    height: 100vh;
+    padding-top: 48px;
+    padding-bottom: 48px;
+    .container {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-between;
+        overflow: auto;
+    } 
+    .link.current {
+        color: var(--accent-color);
+    }
+    &.is-hidden {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transform: translate(-50%, -50%) scale(0.4, 0.1);
+        opacity: 0;         
+    }
+}
+
+.menu-close-btn {
+    position: absolute;
+    display: inline-flex;
+    top: 10px;
+    right: 15px;
+    background: var(--header-color);
+    border:none;
+    
+    &:hover {
+        fill: var(--accent-color);
+    }
+}
+
+.menu-nav__item:not(:last-child) {
+    margin-bottom: 32px;
+}
+
+.menu-nav__link {
+    @include font(500, 40px, 1.12, 0.02em);
+    color: var(--second-text-color);
+    
+    &:hover,
+    :focus {
+        color: var(--accent-color);
+    }
+}
+
+.menu-tel__link {
+    @include font(500, 30px, 1.18, 0.02em);
+    color: var(--accent-color);
+    margin-bottom: 32px;
+    @media screen and (min-width:360px) {
+        font-size: 34px;
+    }
+}
+
+.menu-contacts__item:not(:last-child) {
+    margin-bottom: 32px;
+}
+
+.menu-mail__link {
+    @include font(500, 24px, 1.17, 0.02em);
+    color: var(--text-color);
+}
+
+.menu-social {
+    display: flex;
+
+    &__item:not(:last-child) {
+        margin-right: 6px;
+        padding-right: 6px;
+        border-right: 1px solid rgba(33, 33, 33, 0.2);
+        
+        @media screen and (min-width: 420px) {
+            margin-right: 10px;
+            padding-right: 10px;
+        }
+    }    
+
+    &__link {
+        @include font(500, 14px, 1.22, 0.02em);
+        color: var(--accent-color);
+        text-decoration: none;
+
+        @media screen and (min-width:360px) {
+            font-size: 16px;
+        }
+        
+        @media screen and (min-width: 400px) {
+            font-size: 18px;
+        }
+    }
+}
+
