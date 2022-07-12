@@ -88,7 +88,7 @@ body {
 .pictures__title,
 .team__title,
 .client__title {
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   font-weight: 700;
   line-height: 1.18;
   font-size: 28px;
@@ -102,6 +102,7 @@ body {
 .client__title {
     line-height: 1.17;
     font-size: 36px;
+    margin-bottom: 50px;
   }
 }
 
@@ -352,10 +353,12 @@ body {
 
 .about {
   padding-top: 60px;
+  padding-bottom: 60px;
 }
 @media screen and (min-width: 1200px) {
   .about {
     padding-top: 94px;
+    padding-bottom: 0;
   }
 }
 
@@ -379,12 +382,18 @@ body {
 }
 .peculiarities__title {
   margin-bottom: 10px;
+  text-align: center;
   font-weight: 700;
   line-height: 1.14;
   font-size: 14px;
   letter-spacing: 0.03em;
   color: var(--second-text-color);
   text-transform: uppercase;
+}
+@media screen and (min-width: 768px) {
+  .peculiarities__title {
+    text-align: left;
+  }
 }
 .peculiarities__text {
   font-weight: 400;
@@ -927,6 +936,11 @@ body {
 @media screen and (min-width: 480px) {
   .modal {
     min-width: 450px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .modal {
+    width: 450px;
   }
 }
 @media screen and (min-width: 1200px) {

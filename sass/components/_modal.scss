@@ -40,6 +40,10 @@
         min-width: 450px;
     }
 
+    @include tablet {
+        width: 450px;
+    }
+
     @include desktop {
         min-width: 528px;
         min-height: 581px;

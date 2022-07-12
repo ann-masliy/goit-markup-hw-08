@@ -1,8 +1,10 @@
 .about {
     padding-top: 60px;
+    padding-bottom: 60px;
             
     @include desktop {
         padding-top: 94px;
+        padding-bottom: 0;
     }
 }
 
@@ -25,6 +27,11 @@
     
     &__title {
         margin-bottom: 10px;
+        text-align: center;
+
+        @include tablet {
+            text-align: left;
+        }
 
         @include font(700, 14px, 1.14, 0.03em);
             
